@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true">
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <logger name="com.ps.dtx.fd" level="DEBUG"/>
+
+    <logger name="com.atomikos" level="INFO"/>
+    <logger name="org.springframework.transaction" level="DEBUG"/>
+    <logger name="org.springframework.jms" level="DEBUG"/>
+    <logger name="org.springframework.jdbc" level="DEBUG"/>
+    <logger name="org.springframework.orm.jpa" level="DEBUG"/>
+    <logger name="javax.transaction" level="DEBUG"/>
+    <logger name="javax.jms" level="DEBUG"/>
+    <logger name="org.hibernate.jpa" level="DEBUG"/>
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <logger name="com.alibaba" level="DEBUG"/>
+    <logger name="org.apache.activemq" level="DEBUG"/>
+    <logger name="org.apache.ibatis" level="DEBUG"/>
+    <logger name="bitronix.tm" level="DEBUG"/>
+    <logger name="com.alibaba.druid" level="DEBUG"/>
+    <logger name="com.alibaba.fescar" level="INFO" />
+    <appender name="logFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/logs/fescar-account.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/logs/guide.%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>5MB</MaxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="logFile"/>
+    </root>
+</configuration>
