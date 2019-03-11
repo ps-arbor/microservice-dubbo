@@ -17,6 +17,17 @@
             <artifactId>dubbo-account-model</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- dubbo cloud -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-dubbo-adapter</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+
         <!-- Dubbo -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
@@ -24,13 +35,9 @@
             <version>${dubbo.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${netty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-framework</artifactId>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>${dubbo.version}</version>
         </dependency>
         <!-- db -->
         <dependency>
